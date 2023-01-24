@@ -38,12 +38,12 @@ public class PositiveOrdercardTest {
     @Test   //№1
     public void shouldSuccessfulCard() {
         driver.get("http://localhost:9999");
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Виктор Иванов");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Марина Иванова");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79206161994");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
 
-        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
-        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+        var actualText = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actualText);
     }
 }
