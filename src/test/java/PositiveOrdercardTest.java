@@ -20,7 +20,7 @@ public class PositiveOrdercardTest {
     }
 
     @BeforeEach
-    public void BeforeEach() {
+    public void beforeEach() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -37,7 +37,7 @@ public class PositiveOrdercardTest {
 
     @Test   //№1
     public void shouldSuccessfulCard() {
-        driver.get("http://localhost:9999");
+
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Марина Иванова");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79206161994");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
